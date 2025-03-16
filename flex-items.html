@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+    <style>
+      .container {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        border: 2px solid black;
+        height: 100px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .box {
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+
+      .grow-container .box {
+        background-color: red;
+        flex-grow: 1;
+      }
+
+      .basis-container .box {
+        background-color: blue;
+        flex-basis: 150px;
+      }
+
+      .shrink-container .box {
+        background-color: green;
+        width: 120px;
+        flex-shrink: 2;
+      }
+
+      .align-container .box {
+        background-color: purple;
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h2>flex-grow takes all the available space in<br>the parent container grows
+      if the page is big.</h2>
+
+    <div class="container grow-container">
+      <div class="box">flex-grow</div>
+      <div class="box">flex-grow</div>
+      <div class="box">flex-grow</div>
+    </div>
+
+    <h2>flex-basis sets the base width of an element it will keep<br>the width
+      even if there is room in the container if the<br>page shrinks the element
+      will become small to fit in the page.</h2>
+
+    <div class="container basis-container">
+      <div class="box">flex-basis</div>
+      <div class="box">flex-basis</div>
+      <div class="box">flex-basis</div>
+    </div>
+
+    <h2>flex-shrink determines how much a flex item shrinks relative to other<br>items when
+      there isn't enough space in the container.</h2>
+
+    <div class="container shrink-container">
+      <div class="box">flex-shrink</div>
+      <div class="box">flex-shrink</div>
+      <div class="box">flex-shrink</div>
+    </div>
+
+    <h2>The align-self property overrides the default alignment<br>set by the
+      container's align-items property.</h2>
+
+    <div class="container align-container"
+      style="height: 150px; align-items: flex-start;">
+      <div class="box">align-self</div>
+      <div class="box" style="align-self: center;">align-self</div>
+      <div class="box" style="align-self: flex-start;">align-self</div>
+    </div>
+  </body>
+</html>
